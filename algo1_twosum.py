@@ -19,9 +19,11 @@ def twoSum(nums, target):
     indexs = []
     for i, v in enumerate(nums):
         num2 = target - v
-        numz = nums[:]
-        numz.remove(v)
-        if num2 in numz:
+        _nums = nums
+        if v == num2:
+            _nums = nums[:]
+            _nums.remove(v)
+        if num2 in _nums:
             indexs.append(i)
             continue
         try:
@@ -31,5 +33,6 @@ def twoSum(nums, target):
         except IndexError:
             continue
     return indexs
+return indexs
 
 print twoSum([2, 7, 11, 15], 9)
