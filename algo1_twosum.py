@@ -21,13 +21,11 @@ def twoSum(nums, target):
     nums_orig = nums[:]
     while len(indexs) < 2:
         index_count -= 1
-        try:
-            last_num = nums.pop()
-            target_element = target - last_num
-            if target_element == nums_orig[indexs[0]]:
-                indexs.append(index_count)
-        except IndexError:
-            if target_element in nums:
+        last_num = nums.pop()
+        target_element = target - last_num
+        if indexs and nums_orig[indexs[0]] == target_element:
+            indexs.append(index_count)
+        elif target_element in nums:
                 indexs.append(index_count)
     return indexs
 
