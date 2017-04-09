@@ -18,14 +18,15 @@ def twoSum(nums, target):
     """
     indexs = []
     index_count = len(nums)
-    nums_orig = nums[:]
+    first_solution = None
     while len(indexs) < 2:
         index_count -= 1
         last_num = nums.pop()
         target_element = target - last_num
-        if indexs and nums_orig[indexs[0]] == target_element:
+        if target_element == first_solution:
             indexs.append(index_count)
         elif target_element in nums:
+            first_solution = last_num
             indexs.append(index_count)
     return indexs
 
