@@ -16,18 +16,16 @@ def twoSum(nums, target):
     :type target: int
     :rtype: List[int]
     """
-    indexs = []
-    index_count = len(nums)
-    first_solution = None
-    while len(indexs) < 2:
-        index_count -= 1
-        last_num = nums.pop()
-        target_element = target - last_num
-        if target_element == first_solution:
-            indexs.append(index_count)
-        elif target_element in nums:
-            first_solution = last_num
-            indexs.append(index_count)
-    return indexs
+    solution = []
+    index_count = 0
+    other_value = None
+    indices = {i:num for i, num in enumerate(nums)}
+    while len(solution) < 2:
+        item = indices.pop(index_count)
+        if item == other_value or target - item in indices.values():
+            other_value = target - item 
+            solution.append(index_count)
+        index_count += 1
+    return solution
 
 print twoSum([2, 7, 11, 15], 9)
