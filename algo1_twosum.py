@@ -16,10 +16,11 @@ def twoSum(nums, target):
     :type target: int
     :rtype: List[int]
     """
-    _nums = {}
-    for i, num in enumerate(nums):
-        if target - num in _nums:
-            return [_nums[target - num], i]
-        _nums[num] = i
+    _map = {}
+    for i, n in enumerate(nums):
+        try:
+            return [_map[target-n], i]
+        except:
+            _map[n] = i
 
 print twoSum([2, 7, 11, 15], 9)
