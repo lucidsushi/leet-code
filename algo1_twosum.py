@@ -26,7 +26,7 @@ def twoSum(nums, target):
         if indexs and nums_orig[indexs[0]] == target_element:
             indexs.append(index_count)
         elif target_element in nums:
-                indexs.append(index_count)
+            indexs.append(index_count)
     return indexs
 
 print twoSum([2, 7, 11, 15], 9)
