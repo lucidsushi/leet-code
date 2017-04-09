@@ -17,22 +17,17 @@ def twoSum(nums, target):
     :rtype: List[int]
     """
     indexs = []
-    for i, v in enumerate(nums):
-        num2 = target - v
-        _nums = nums
-        if v == num2:
-            _nums = nums[:]
-            _nums.remove(v)
-        if num2 in _nums:
-            indexs.append(i)
-            continue
+    index_count = len(nums)
+    nums_orig = nums[:]
+    while len(indexs) < 2:
+        index_count -= 1
         try:
-            if v == nums[indexs[0]]:
-                indexs.append(i)
-                break
+            last_num = nums.pop()
+            target_element = target - last_num
+            if target_element in nums or target_element == nums_orig[indexs[0]]:
+                indexs.append(index_count)
         except IndexError:
             continue
     return indexs
-return indexs
 
 print twoSum([2, 7, 11, 15], 9)
