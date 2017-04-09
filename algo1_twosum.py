@@ -24,10 +24,11 @@ def twoSum(nums, target):
         try:
             last_num = nums.pop()
             target_element = target - last_num
-            if target_element in nums or target_element == nums_orig[indexs[0]]:
+            if target_element == nums_orig[indexs[0]]:
                 indexs.append(index_count)
         except IndexError:
-            continue
+            if target_element in nums:
+                indexs.append(index_count)
     return indexs
 
 print twoSum([2, 7, 11, 15], 9)
