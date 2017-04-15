@@ -23,8 +23,11 @@ def findComplement(num):
     :type num: int
     :rtype: int
     """
-    bit = "{0:b}".format(num)
-    compli_bits = []
-    for i in bit:
-        compli_bits.append(str(int(i) ^ 1))
-    return int(''.join(compli_bits), 2)
+    compli_num = 0
+    bit_position = 0
+    while num:
+        compli_bit = (num & 1) ^ 1
+        num = num >> 1
+        compli_num = compli_num | (compli_bit << bit_position)
+        bit_position += 1
+    return compli_num
