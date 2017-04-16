@@ -25,3 +25,6 @@ def findComplement(num):
     """
     # with the observation that n 1s (binary) = 2 ** n -1 (int)
     return (1 << num.bit_length()) - 1 - num
+
+
+#random commit test from windows
