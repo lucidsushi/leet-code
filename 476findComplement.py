@@ -23,11 +23,7 @@ def findComplement(num):
     :type num: int
     :rtype: int
     """
-    compli_num = 0
-    bit_position = 0
-    while num:
-        compli_bit = (num & 1) ^ 1
-        num = num >> 1
-        compli_num = compli_num | (compli_bit << bit_position)
-        bit_position += 1
-    return compli_num
+    closest_power2 = int(math.ceil(math.log(num, 2)))
+    if 2 ** closest_power2 == num:
+        return 2 ** (closest_power2 + 1) - 1 - num
+    return (2 ** closest_power2) - num - 1
