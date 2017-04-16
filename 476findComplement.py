@@ -23,4 +23,4 @@ def findComplement(num):
     :type num: int
     :rtype: int
     """
-    return 2 ** num.bit_length() - 1 - num
+    return int('1' * num.bit_length(), 2) - num
