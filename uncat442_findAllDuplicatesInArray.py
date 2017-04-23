@@ -18,11 +18,12 @@ def findDuplicates(nums):
     :type nums: List[int]
     :rtype: List[int]
     """
-    nums_check = {}
-    nums_duplicate = []
+    # assuming only duplicates will exist (no triple or more occurence)
+    nums_check = {'duplicates': []}
     for num in nums:
         if num in nums_check:
-            nums_duplicate.append(num)
-        else
+            nums_check['duplicates'].append(num)
+        else:
             nums_check.setdefault(num, '')
-    return nums_duplicate
+    return nums_check['duplicates']
+
