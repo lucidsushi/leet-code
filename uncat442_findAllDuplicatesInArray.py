@@ -13,3 +13,16 @@
 # [2,3]
 
 
+def findDuplicates(nums):
+    """
+    :type nums: List[int]
+    :rtype: List[int]
+    """
+    nums_check = {}
+    nums_duplicate = []
+    for num in nums:
+        if num in nums_check:
+            nums_duplicate.append(num)
+        else
+            nums_check.setdefault(num, '')
+    return nums_duplicate
