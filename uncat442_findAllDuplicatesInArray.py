@@ -14,16 +14,14 @@
 
 
 def findDuplicates(nums):
-    """
-    :type nums: List[int]
-    :rtype: List[int]
-    """
-    # assuming only duplicates will exist (no triple or more occurence)
-    nums_check = {'duplicates': []}
+    """ given num cannot be largeer than len(nums) and are all positive,
+        use them as indexs and mark with unary minus operator """
+    nums_duplicate = []
     for num in nums:
-        if num in nums_check:
-            nums_check['duplicates'].append(num)
-        else:
-            nums_check.setdefault(num, '')
-    return nums_check['duplicates']
+        nums[abs(num)-1] *= -1
+        if nums[abs(num)-1] > 0:
+            nums_duplicate.append(abs(num))
+    return nums_duplicate
+
+
 
