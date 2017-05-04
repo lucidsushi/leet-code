@@ -23,11 +23,16 @@ def addTwoNumbers(self, l1, l2):
     :type l1: ListNode
     :type l2: ListNode
     :rtype: ListNode
+    
+    a, b = c, a
+    temp = (c, a)
+    a, b = temp
+    b gets assigned old a and a is new a
     """
     l1s = []
     l2s = []
     carry = 0
-    lsum_next = None
+    lsum_head = None
 
     while l1 or l2:
         if l1:
@@ -44,11 +49,9 @@ def addTwoNumbers(self, l1, l2):
         if l2s:
             total += l2s.pop()
         carry, num = divmod(total, 10)
-        if lsum_next:
-            lsum = ListNode(num)
-            lsum.next = lsum_next
-            lsum_next = lsum
+        if lsum_head:
+            lsum_head, lsum_head.next = ListNode(num), lsum_head
         else:
-            lsum_next = lsum = ListNode(num)
-    return lsum
+            lsum_head = ListNode(num)
+    return lsum_head
     
