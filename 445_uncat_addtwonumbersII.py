@@ -49,9 +49,6 @@ def addTwoNumbers(self, l1, l2):
         if l2s:
             total += l2s.pop()
         carry, num = divmod(total, 10)
-        if lsum_head:
-            lsum_head, lsum_head.next = ListNode(num), lsum_head
-        else:
-            lsum_head = ListNode(num)
+        lsum_head, lsum_head.next = ListNode(num), lsum_head
     return lsum_head
     
