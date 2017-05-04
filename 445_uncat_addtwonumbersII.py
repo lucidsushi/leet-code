@@ -34,13 +34,13 @@ def addTwoNumbers(self, l1, l2):
     carry = 0
     lsum_head = None
 
-    while l1 or l2:
-        if l1:
-            l1s.append(l1.val)
-            l1 = l1.next
-        if l2:
-            l2s.append(l2.val)
-            l2 = l2.next
+    while l1:
+        l1s.append(l1.val)
+        l1 = l1.next
+
+    while l2:
+        l2s.append(l2.val)
+        l2 = l2.next
 
     while l1s or l2s or carry:
         total = carry
