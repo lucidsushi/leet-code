@@ -24,11 +24,10 @@ def addTwoNumbers(self, l1, l2):
     :type l2: ListNode
     :rtype: ListNode
     """
-    lsum_root = lsum = ListNode(0)
-    carry = 0
     l1s = []
     l2s = []
-    lsums = []
+    carry = 0
+    lsum_next = None
 
     while l1 or l2:
         if l1 and l1.val is not None:
@@ -48,10 +47,11 @@ def addTwoNumbers(self, l1, l2):
         except IndexError:
             val2 = 0
         carry, num = divmod(val1+val2+carry, 10)
-        lsums.append(num)
-
-    while True:
-        try:
-            lsum.next = lsum = ListNode(lsums.pop())
-        except IndexError:
-            return lsum_root.next
+        if lsum_next:
+            lsum = ListNode(num)
+            lsum.next = lsum_next
+            lsum_next = lsum
+        else:
+            lsum_next = lsum = ListNode(num)
+    return lsum
+    
