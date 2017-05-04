@@ -30,23 +30,20 @@ def addTwoNumbers(self, l1, l2):
     lsum_next = None
 
     while l1 or l2:
-        if l1 and l1.val is not None:
+        if l1:
             l1s.append(l1.val)
             l1 = l1.next
-        if l2 and l2.val is not None:
+        if l2:
             l2s.append(l2.val)
             l2 = l2.next
 
     while l1s or l2s or carry:
-        try:
-            val1 = l1s.pop()
-        except IndexError:
-            val1 = 0
-        try:
-            val2 = l2s.pop()
-        except IndexError:
-            val2 = 0
-        carry, num = divmod(val1+val2+carry, 10)
+        total = carry
+        if l1s:
+            total += l1s.pop()
+        if l2s:
+            total += l2s.pop()
+        carry, num = divmod(total, 10)
         if lsum_next:
             lsum = ListNode(num)
             lsum.next = lsum_next
