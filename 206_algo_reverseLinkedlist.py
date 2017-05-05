@@ -12,3 +12,11 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        heads = []
+        reverse_root = reverse = ListNode(0)
+        while head:
+            heads.append(head.val)
+            head = head.next
+        while heads:
+            reverse.next = reverse = ListNode(heads.pop())
+        return reverse_root.next
