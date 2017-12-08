@@ -1,3 +1,3 @@
-# Doing these to torture my brain just to forget about them few months later :sushi:
+# Doing these for fun just to forget about them a few months later... :sushi:
 
 https://leetcode.com/
