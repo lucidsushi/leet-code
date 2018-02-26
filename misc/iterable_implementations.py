@@ -1,4 +1,4 @@
-// JAVASCRIPT
+// JAVASCRIPT 1
 function makeIterator(n){
   nextIndex = 0;
   return {'next': function(){
@@ -14,6 +14,23 @@ iter = makeIterator([1,2]);
 console.log(iter.next())
 console.log(iter.next())
 console.log(iter.next())
+
+
+// JAVASCRIPT 2
+function* gen(array){
+  // yield expects an iterable
+  yield* array;
+}
+
+iterator = gen([1,2]);
+
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+
+for(let item of iterator){
+  console.log(item);
+}
 
 
 # PYTHON 1
