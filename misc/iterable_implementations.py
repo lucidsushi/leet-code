@@ -17,6 +17,18 @@ console.log(iter.next())
 
 
 // JAVASCRIPT 2
+let array = [1, 2];
+let makeIterable = {};
+makeIterable[Symbol.iterator] = function* (){
+  yield* array
+};
+
+for (let item of makeIterable){
+  console.log(item);
+}
+
+
+// JAVASCRIPT 3
 function* gen(array){
   // yield expects an iterable
   yield* array;
