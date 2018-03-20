@@ -1,4 +1,4 @@
-# Given an array of integers, return indices of the two numbers such that they 
+# Given an array of integers, return indices of the two numbers such that they
 # add up to a specific target.
 
 # You may assume that each input would have exactly one solution, and you may
@@ -23,4 +23,75 @@ def twoSum(nums, target):
         except:
             _map[n] = i
 
-print twoSum([2, 7, 11, 15], 9)
+# print twoSum([2, 7, 11, 15], 9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def addtwo(nums, target):
+  i_to_try = 0
+  while i_to_try < len(nums):
+    for i, v in enumerate(nums):
+      if nums[i_to_try] + v == target and i_to_try != i:
+        return i_to_try, i
+    i_to_try += 1
+
+
+
+array = [2, 3, 4] #[3, 3]
+target = 6
+
+print addtwo(array, target)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
