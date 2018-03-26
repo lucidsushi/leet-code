@@ -66,33 +66,3 @@ array = [2, 3, 4] #[3, 3]
 target = 6
 
 print addtwo(array, target)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 0b85ce6dca9733778a130bf5970c8314b4119fda
