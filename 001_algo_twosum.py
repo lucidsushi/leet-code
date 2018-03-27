@@ -53,16 +53,14 @@ def twoSum(nums, target):
 
 # refresher
 def addtwo(nums, target):
-  i_to_try = 0
-  while i_to_try < len(nums):
-    for i, v in enumerate(nums):
-      if nums[i_to_try] + v == target and i_to_try != i:
-        return i_to_try, i
-    i_to_try += 1
+    i_to_try = 0
+    while i_to_try < len(nums):
+        for i, v in enumerate(nums):
+            if nums[i_to_try] + v == target and i_to_try != i:
+                return i_to_try, i
+        i_to_try += 1
 
-
-
-array = [2, 3, 4] #[3, 3]
+array = [2, 3, 4]  # [3, 3]
 target = 6
 
 print addtwo(array, target)
