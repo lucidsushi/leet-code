@@ -27,7 +27,7 @@ def twoSum(nums, target):
 
 
 # slowest method thought of
-def addtwo(nums, target):
+def twoSum(nums, target):
     i_to_try = 0
     while i_to_try < len(nums):
         for i, v in enumerate(nums):
@@ -37,7 +37,7 @@ def addtwo(nums, target):
 
 
 # first realization of O(n)
-def addtwo(nums, target):
+def twoSum(nums, target):
     nums_dict = {}
     for index, num in enumerate(nums):
         if (target-num) in nums_dict and nums_dict[target-num] != index:
@@ -47,7 +47,7 @@ def addtwo(nums, target):
 
 
 # rejection until match exist with less conditional checking
-def addtwo(nums, target):
+def twoSum(nums, target):
     nums_dict = {}
     for index, num in enumerate(nums):
         try:
@@ -56,6 +56,25 @@ def addtwo(nums, target):
             nums_dict[num] = index
 
 
-# print twoSum([2, 3, 4], 6)
+# jake's mention of using sorted list, O(n log n)? . that doesn't work yet.
+def twoSum(nums, target):
+    nums = sorted(nums)  # this messed up the indices though
+    index_small = 0
+    index_big = len(nums) - 1
+
+    # move towards answer from both sides
+    for _ in range(index_big):
+        result = nums[index_small] + nums[index_big]
+        if result > target:
+            index_big -= 1
+
+        elif result < target:
+            index_small += 1
+
+        else:
+            return (index_small, index_big)
+
+
+# print twoSum([3, 2, 4], 6)
 # print twoSum([3, 3], 6)
 # print twoSum([2, 7, 11, 15], 9)
