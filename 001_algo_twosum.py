@@ -26,7 +26,7 @@ def twoSum(nums, target):
             _map[n] = i
 
 
-# slowest method thought of
+# slowest method thought of (so slow it doesn't get accepted)
 def twoSum(nums, target):
     i_to_try = 0
     while i_to_try < len(nums):
@@ -36,12 +36,22 @@ def twoSum(nums, target):
         i_to_try += 1
 
 
+# rewrite slowest method using two for loops instead  o(n^2)
+def twoSum(nums, target):
+    nums_size = len(nums)
+    for i in range(nums_size):
+        for j in range(i+1, nums_size):
+            if nums[i] + nums[j] == target:
+                return i, j
+
+
 # first realization of O(n)
 def twoSum(nums, target):
     nums_dict = {}
     for index, num in enumerate(nums):
-        if (target-num) in nums_dict and nums_dict[target-num] != index:
-            return (index, nums_dict[target-num])
+        counter_part = target - num
+        if counter_part in nums_dict:
+            return (index, nums_dict[counter_part])
         else:
             nums_dict[num] = index
 
