@@ -1,3 +1,4 @@
+user.name=dsu
 alias.co=checkout
 alias.br=branch
 alias.ct=commit
@@ -16,3 +17,12 @@ difftool.prompt=false
 difftool.meld.cmd=/spin/software/custom/.prod_eng_lib/apps/meld/3.12.3/bin/meld $LOCAL $REMOTE
 merge.tool=kdiff3
 mergetool.kdiff3.cmd=kdiff3 $LOCAL $MERGED $REMOTE --output $MERGED
+core.editor=~dsu/Desktop/Portables/'Sublime Text 2'/sublime_text -n -w
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/lucidsushi/leet-code.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
