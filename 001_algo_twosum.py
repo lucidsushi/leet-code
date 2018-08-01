@@ -26,20 +26,20 @@ def twoSum(nums, target):
             _map[n] = i
 
 
-# slowest method thought of (so slow it doesn't get accepted)
+# using while loop
 def twoSum(nums, target):
-    i_to_try = 0
-    while i_to_try < len(nums):
-        for i, v in enumerate(nums):
-            if nums[i_to_try] + v == target and i_to_try != i:
-                return i_to_try, i
-        i_to_try += 1
+    i1 = 0
+    while i1 < len(nums):
+        for i2 in range(i1 + 1, len(nums)):
+            if nums[i1] + nums[i2] == target:
+                return i1, i2
+        i1 += 1
 
 
-# rewrite slowest method using two for loops instead  o(n^2)
+# using two for loops instead  o(n^2)
 def twoSum(nums, target):
     nums_size = len(nums)
-    for i in range(nums_size):
+    for i in range(nums_size - 1):
         for j in range(i+1, nums_size):
             if nums[i] + nums[j] == target:
                 return i, j
