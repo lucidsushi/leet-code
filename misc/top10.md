@@ -36,7 +36,7 @@
         var x = 'inner scope';
     })();
 
-    #4 To be explained (one case of why function scope didn't take precedence to figure out)
+    #4 Function scope where declaration cannot make it above it's scope
     var foo = 1;
     function bar() {
         if (!foo) {
@@ -45,7 +45,7 @@
         console.log(foo); //10
     }
     bar();
-
+    ================
     var a = 1;
     function b() {
         a = 10;
@@ -54,6 +54,16 @@
     }
     b();
     console.log(a); //1
+
+    #5 Functions hoists before declaration, assignment happens at it's location
+    var a = 10;
+    console.log(a); //10
+    function a() {}
+    ================
+    console.log(a); //[Function: a]
+    var a = 10;
+    function a() {}
+
 
     (https://tinyurl.com/y9dmfnru)
     Temporal Dead Zone
