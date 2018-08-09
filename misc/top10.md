@@ -1,11 +1,13 @@
-1. What is Hoisting? (Javascript)
+<!-- Javascript -->
 
-    "Variable binding created at the top to the (block) scope containing the delcartion" <-- not for `var`
+1. What is Hoisting?
+
+    "Variable binding created at the top to the (block for let/const) scope (function scope) containing the delcartion"
 
     "Hoisting was thought up as a general way of thinking about how execution contexts (specifically the creation and execution phases) work in JavaScript. However, the concept can be a little confusing at first.
     Conceptually, for example, a strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code."
 
-    "JavaScript only hoists declarations, not initializations. If a variable is declared and initialized after using it, the value will be undefined"
+    "JavaScript only hoists declarations, not initializations. If a variable is declared and initialized AFTER using it, the value will be undefined"
 
     <!-- Examples -->
 
@@ -85,3 +87,28 @@
        }
     }
     test();
+
+
+2. What is Closure?
+
+    "Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope."
+
+    "Closures are nothing but functions with 'preserved' data"
+
+    <!-- Examples -->
+
+    const arr = [10, 12, 15, 21];
+    for (var i = 0; i < arr.length; i++) {
+      setTimeout(function() {
+        console.log('The index of this number is: ' + i);
+      }, 1000);
+    }
+
+    // The index of this number is: 4 (FOUR TIMES)
+
+    // Not a clear example as to why it prints 4, probably related to some asynchronous/event loop/que fundamentals
+
+
+    https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
+
+    https://coderbyte.com/algorithm/3-common-javascript-closure-questions
