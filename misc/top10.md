@@ -94,21 +94,43 @@
     "Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope."
 
     "Closures are nothing but functions with 'preserved' data"
+    var a = 'stuff'
+    function blah(){
+        console.log(a)  //stuff <- super simple closure
+    }
 
     <!-- Examples -->
 
     const arr = [10, 12, 15, 21];
     for (var i = 0; i < arr.length; i++) {
       setTimeout(function() {
-        console.log('The index of this number is: ' + i);
+        console.log(i);
       }, 1000);
     }
+    // 4 (FOUR TIMES).. anonymous function here is a closure
 
-    // The index of this number is: 4 (FOUR TIMES)
+    // Not a clear example as to why it prints 4 four times, probably related to some asynchronous/event loop/que fundamentals
 
-    // Not a clear example as to why it prints 4, probably related to some asynchronous/event loop/que fundamentals
+    const arr = [10, 12, 15, 21];
+    for (let i = 0; i < arr.length; i++) {
+      setTimeout(function() {
+        console.log(i);
+      }, 1000);
+    }
+    // 0 1 2 3  prints as expected by using let (no hoisting to the outside of for loop)
 
+    const arr = [10, 12, 15, 21];
+    for (var i = 0; i < arr.length; i++) {
+      setTimeout(function() {
+        return function(localized_i){
+            console.log(localized_i);
+        }
+      }(i), 1000);
+    }
+    // 0 1 2 3 Still need to explain why this works, why isn't i 4 in this case
+    // https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
 
-    https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
 
     https://coderbyte.com/algorithm/3-common-javascript-closure-questions
+
+    https://medium.freecodecamp.org/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb
