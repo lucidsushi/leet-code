@@ -71,7 +71,7 @@ var a = 10;
 function a() {}
 ```
 
-## Temporal Dead Zone (https://tinyurl.com/y9dmfnru)
+### Temporal Dead Zone (https://tinyurl.com/y9dmfnru)
 - let bindings are created at the top of the (block) scope containing the declaration, commonly referred to as "hoisting". Unlike variables declared with var, which will start with the value undefined, let variables are not initialized until their definition is evaluated. Accessing the variable before the initialization results in a ReferenceError. The variable is in a "temporal dead zone" from the start of the block until the initialization is processed.
 
 #### hoisting + temporal dead zone
@@ -99,46 +99,53 @@ test();
 
 ## 2. What is Closure?
 
-    "Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope."
+- "Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope."
 
-    "Closures are nothing but functions with 'preserved' data"
-    var a = 'stuff'
-    function blah(){
-        console.log(a)  //stuff <- super simple closure
+- "Closures are nothing but functions with 'preserved' data"
+
+#### Most Basic Closure
+```
+var a = 'stuff'
+function blah(){
+    console.log(a)  //stuff
+}
+```
+
+#### Example 1 - Write a function that loops through an array and print it's index after a delay
+```javascript
+const arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    console.log(i);
+  }, 1000);
+}
+// 4 (FOUR TIMES).. anonymous function here is a closure
+// Not a clear example as to why it prints 4 four times, probably related to some asynchronous/event loop/que fundamentals
+```
+#### Example 1 Cont' - Using `let` (no hoisting to the outside of for loop)
+```javascript
+const arr = [10, 12, 15, 21];
+for (let i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    console.log(i);
+  }, 1000);
+}
+// 0 1 2 3  prints as expected
+```
+#### Example 1 Cont' - Using factory function https://www.sitepoint.com/factory-functions-javascript/
+```javascript
+const arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    return function(localized_i){
+        console.log(localized_i);
     }
+  }(i), 1000);
+}
+// 0 1 2 3 Still need to explain why this works, why isn't i 4 in this case
+```
+https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
 
-    <!-- Examples -->
+https://coderbyte.com/algorithm/3-common-javascript-closure-questions
 
-    const arr = [10, 12, 15, 21];
-    for (var i = 0; i < arr.length; i++) {
-      setTimeout(function() {
-        console.log(i);
-      }, 1000);
-    }
-    // 4 (FOUR TIMES).. anonymous function here is a closure
-
-    // Not a clear example as to why it prints 4 four times, probably related to some asynchronous/event loop/que fundamentals
-
-    const arr = [10, 12, 15, 21];
-    for (let i = 0; i < arr.length; i++) {
-      setTimeout(function() {
-        console.log(i);
-      }, 1000);
-    }
-    // 0 1 2 3  prints as expected by using let (no hoisting to the outside of for loop)
-
-    const arr = [10, 12, 15, 21];
-    for (var i = 0; i < arr.length; i++) {
-      setTimeout(function() {
-        return function(localized_i){
-            console.log(localized_i);
-        }
-      }(i), 1000);
-    }
-    // 0 1 2 3 Still need to explain why this works, why isn't i 4 in this case
-    // https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
-
-
-    https://coderbyte.com/algorithm/3-common-javascript-closure-questions
-
-    https://medium.freecodecamp.org/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb
+https://medium.freecodecamp.org/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb
