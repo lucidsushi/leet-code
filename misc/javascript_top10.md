@@ -6,7 +6,7 @@
 
 ---
 
-## 1. What is Hoisting?
+## 1. What is Hoisting? [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 
 - "Variable binding created at the top to the (block for let/const) scope (function scope) containing the delcartion"
 
@@ -104,7 +104,7 @@ test();
 
 
 
-## 2. What is Closure?
+## 2. What is Closure? [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 
 - "Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope."
 
