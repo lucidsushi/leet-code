@@ -1,6 +1,10 @@
-[1. What is Hoisting?](https://github.com/lucidsushi/leet-code/blob/master/misc/top10.md#1-what-is-hoisting)
+#### Table of Contents
 
-[2. What is Closure?](https://github.com/lucidsushi/leet-code/blob/master/misc/top10.md#2-what-is-closure)
+#### [1. What is Hoisting?](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#1-what-is-hoisting)
+
+#### [2. What is Closure?](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#2-what-is-closure)
+
+---
 
 ## 1. What is Hoisting?
 
