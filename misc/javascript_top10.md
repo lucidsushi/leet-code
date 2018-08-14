@@ -46,6 +46,7 @@ var x = 'outer scope';
     console.log(x); //undefined
     var x = 'inner scope';
 })();
+// group operator forces a lexical scope
 ```
 #### Example 4 (Function scope where declaration cannot make it above it's scope)
 ```javascript
@@ -128,6 +129,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 // 4 (FOUR TIMES).. anonymous function here is a closure
 // Not a clear example as to why it prints 4 four times, probably related to some asynchronous/event loop/que fundamentals
+// Anonymous functions from setTimeout are only run after the for loop is done; and by then the `i` value is 4 as a result of the last `i++` before the loop ends
 ```
 #### Example 1 Cont' - Using `let` (no hoisting to the outside of for loop)
 ```javascript
@@ -137,9 +139,9 @@ for (let i = 0; i < arr.length; i++) {
     console.log(i);
   }, 1000);
 }
-// 0 1 2 3  prints as expected
+// 0 1 2 3  prints as expected (each loop's function gets closed with a new `i`)
 ```
-#### Example 1 Cont' - Using factory function https://www.sitepoint.com/factory-functions-javascript/
+#### Example 1 Cont' - Using function factory (when a function returns an object) https://www.sitepoint.com/factory-functions-javascript/
 ```javascript
 const arr = [10, 12, 15, 21];
 for (var i = 0; i < arr.length; i++) {
@@ -149,7 +151,8 @@ for (var i = 0; i < arr.length; i++) {
     }
   }(i), 1000);
 }
-// 0 1 2 3 Still need to explain why this works, why isn't i 4 in this case
+// 0 1 2 3 localized_i is passed in by value (as it's a primitive), which gives it a unique memory location (a different copy)
+// https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain-english-8d00fd06a47c (sort of)
 ```
 https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
 
