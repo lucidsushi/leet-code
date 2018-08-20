@@ -154,6 +154,12 @@ for (var i = 0; i < arr.length; i++) {
 // 0 1 2 3 localized_i is passed in by value (as it's a primitive), which gives it a unique memory location (a different copy)
 // https://codeburst.io/javascript-passing-by-value-vs-reference-explained-in-plain-english-8d00fd06a47c (sort of)
 ```
+
+#### Example 2  - Private Counter
+```javascript
+
+```
+
 https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
 
 https://coderbyte.com/algorithm/3-common-javascript-closure-questions
