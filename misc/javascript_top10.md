@@ -159,15 +159,16 @@ for (var i = 0; i < arr.length; i++) {
 ```javascript
 function private_counter(){
     var current_value = 0;
-    return {add: (current_value, x) => {current_value += x},
-            retrieve_current: () => {console.log(current_value)}
+    return {
+      add: x =>  x += current_value,
+      retrieve_current: () => {console.log(current_value)}
     }
 }
 
 counter = private_counter();
 counter.add(10);
 counter.add(5);
-counter.retrieve_current;
+counter.retrieve_current();
 
 ```
 
