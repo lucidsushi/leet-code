@@ -158,6 +158,7 @@ for (var i = 0; i < arr.length; i++) {
 #### Example 2  - Private Counter
 ```javascript
 function private_counter(){
+    //  JAVASCRIPT
     var current_value = 0;
     return {
       add: x => current_value += x,
@@ -169,7 +170,28 @@ counter = private_counter();
 counter.add(10);
 counter.add(5);
 counter.retrieve_current();
+```
 
+```python
+def private_counter():
+    # PYTHON
+      _count = [1]
+    
+      def add(x):
+        _count[0] = _count[0] + x
+        return _count
+      
+      def retrieve():
+        print 'Current count is at', _count[0]
+    
+      return {'add': add,
+              'retrieve': retrieve}
+
+counter = private_counter()
+counter['add'](5)
+counter['add'](10)
+counter['retrieve']()
+#　Current count is at  16
 ```
 
 https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
