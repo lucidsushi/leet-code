@@ -6,7 +6,7 @@
 
 #### [3. Implement TwoSum()](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#3-implement-twosum-sushi)
 
-#### [4. Implement Fibonacci / Debounce](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#4-implement-fibonacci-debounce-sushi)
+#### [4. Implement Fibonacci / Debounce](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#4-implement-fibonaccidebounce-sushi)
 
 ---
 
