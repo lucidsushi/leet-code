@@ -4,6 +4,8 @@
 
 #### [2. What is Closure?](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#2-what-is-closure-sushi)
 
+#### [3. Implement TwoSum()](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#3-implement-two-sum)
+
 ---
 
 ## 1. What is Hoisting? [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
@@ -198,3 +200,7 @@ counter['retrieve']()
 - https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
 - https://coderbyte.com/algorithm/3-common-javascript-closure-questions
 - https://medium.freecodecamp.org/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb
+
+## 3. Implement TwoSum() [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+- TwoSum(numbers, target), https://leetcode.com/problems/two-sum/
+- [repo example](https://github.com/lucidsushi/leet-code/blob/master/001_algo_twosum.py)
