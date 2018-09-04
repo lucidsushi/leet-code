@@ -131,7 +131,7 @@ for (var i = 0; i < arr.length; i++) {
 // Not a clear example as to why it prints 4 four times, probably related to some asynchronous/event loop/que fundamentals
 // Anonymous functions from setTimeout are only run after the for loop is done; and by then the `i` value is 4 as a result of the last `i++` before the loop ends
 ```
-#### Example 1 Cont' - Using `let` (no hoisting to the outside of for loop)
+##### Example 1 Cont' - Using `let` (no hoisting to the outside of for loop)
 ```javascript
 const arr = [10, 12, 15, 21];
 for (let i = 0; i < arr.length; i++) {
@@ -141,7 +141,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 // 0 1 2 3  prints as expected (each loop's function gets closed with a new `i`)
 ```
-#### Example 1 Cont' - Using function factory (when a function returns an object) https://www.sitepoint.com/factory-functions-javascript/
+##### Example 1 Cont' - Using function factory (when a function returns an object) https://www.sitepoint.com/factory-functions-javascript/
 ```javascript
 const arr = [10, 12, 15, 21];
 for (var i = 0; i < arr.length; i++) {
@@ -174,7 +174,7 @@ counter.retrieve_current();
 
 ```python
 def private_counter():
-    # PYTHON
+    # PYTHON (good example of pass immutable in by val and mutable in by reference(?))
       _count = [1]
     
       def add(x):
@@ -194,8 +194,7 @@ counter['retrieve']()
 #　Current count is at  16
 ```
 
-https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
-
-https://coderbyte.com/algorithm/3-common-javascript-closure-questions
-
-https://medium.freecodecamp.org/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb
+#### Resources
+- https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
+- https://coderbyte.com/algorithm/3-common-javascript-closure-questions
+- https://medium.freecodecamp.org/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb
