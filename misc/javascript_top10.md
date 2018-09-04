@@ -160,8 +160,8 @@ for (var i = 0; i < arr.length; i++) {
 function private_counter(){
     var current_value = 0;
     return {
-      add: x =>  x += current_value,
-      retrieve_current: () => {console.log(current_value)}
+      add: x => current_value += x,
+      retrieve_current: () => console.log(current_value)
     }
 }
 
