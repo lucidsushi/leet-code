@@ -4,7 +4,9 @@
 
 #### [2. What is Closure?](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#2-what-is-closure-sushi)
 
-#### [3. Implement TwoSum()](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#3-implement-two-sum)
+#### [3. Implement TwoSum()](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#3-implement-twosum-sushi)
+
+#### [4. Implement Fibonacci / Debounce](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#4-implement-fibonacci-debounce-sushi)
 
 ---
 
@@ -202,5 +204,9 @@ counter['retrieve']()
 - https://medium.freecodecamp.org/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb
 
 ## 3. Implement TwoSum() [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
-- TwoSum(numbers, target), https://leetcode.com/problems/two-sum/
+- TwoSum(numbers, target) => (index1, index2), https://leetcode.com/problems/two-sum/
 - [repo example](https://github.com/lucidsushi/leet-code/blob/master/001_algo_twosum.py)
+
+## 4. Implement Fibonacci()/Debounce() [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+- Fibonacci
+- Debounce
