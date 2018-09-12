@@ -220,7 +220,7 @@ function get_fibonacci_of_size(size){
     return sequence[0]
   }
   for(let i=2; i<size; i++){
-    sequence.push(sequence[i-1] + sequence[i-2])
+    sequence.push(sequence[i - 1] + sequence[i - 2])
   }
   return sequence
 }
