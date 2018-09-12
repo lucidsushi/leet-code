@@ -209,4 +209,39 @@ counter['retrieve']()
 
 ## 4. Implement Fibonacci()/Debounce() [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 - Fibonacci
+```javascript
+// array where current number is the sum of previous two numbers for a requested size of array
+
+function get_fibonacci_of_size(size){
+  let sequence = [0, 1]
+
+  if(size === 0){
+    return []
+  } else if (size === 1){
+    return sequence[0]
+  }
+  for(let i=2; i<size; i++){
+    sequence.push(sequence[i-1] + sequence[i-2])
+  }
+  return sequence
+}
+
+console.log(get_fibonacci_of_size(8))
+
+```
+```python
+def get_fibonacci_of_size(size):
+  sequence = [0, 1]
+
+  if size == 0:
+    return []
+  elif size == 1:
+    return sequence[0]
+
+  for i in range(2, size):
+    sequence.append(sequence[i - 1] + sequence[i - 2])
+  return sequence
+
+print get_fibonacci_of_size(5)
+````
 - Debounce
