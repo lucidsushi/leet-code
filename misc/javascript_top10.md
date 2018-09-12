@@ -208,7 +208,8 @@ counter['retrieve']()
 - [repo example](https://github.com/lucidsushi/leet-code/blob/master/001_algo_twosum.py)
 
 ## 4. Implement Fibonacci()/Debounce() [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
-- Fibonacci ![Fibonacci](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/FibonacciSpiral.svg/220px-FibonacciSpiral.svg.png)
+ ![Fibonacci](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/FibonacciSpiral.svg/220px-FibonacciSpiral.svg.png)
+- Fibonacci
   + array where current number is the sum of previous two numbers for a requested size of array
 ```javascript
 function get_fibonacci_of_size(size){
@@ -220,7 +221,8 @@ function get_fibonacci_of_size(size){
     return sequence[0]
   }
   for(let i=2; i<size; i++){
-    sequence.push(sequence[i - 1] + sequence[i - 2])
+    const last_two_number = sequence[i - 1] + sequence[i - 2]
+    sequence.push(last_two_number)
   }
   return sequence
 }
@@ -238,7 +240,8 @@ def get_fibonacci_of_size(size):
     return sequence[0]
 
   for i in range(2, size):
-    sequence.append(sequence[i - 1] + sequence[i - 2])
+    last_two_number = sequence[i - 1] + sequence[i - 2]
+    sequence.append(last_two_number)
   return sequence
 
 print get_fibonacci_of_size(5)
