@@ -247,3 +247,17 @@ def get_fibonacci_of_size(size):
 print get_fibonacci_of_size(5)
 ````
 - Debounce
+
+debounce = (function, wait, immediate) => {
+
+  return () => {
+    let later = () => {
+      timeout = null
+      if (!immediate) function.apply(this, arguments)
+    }
+
+  }
+
+}
+https://davidwalsh.name/javascript-debounce-function
+https://medium.com/@TCAS3/debounce-deep-dive-javascript-es6-e6f8d983b7a1
