@@ -249,18 +249,18 @@ print get_fibonacci_of_size(5)
 #### Debounce
   + a wrapper function to make the inner function only run once (either at the start or end of the series) on a series of invocations 
 ```javascript
+/**
+ - (immediate = true, calls first invocation)
+ - functionCall runs once only until a setTimeout() completes and timeout is set to null again
+ - mutiple calls trigger clearTimeouts so timeout never is set to null unless one setTimeout() finishes
+ - 
+ - (immediate = false, calls last invocation)
+ - functionCall runs after setTimeout() finishes
+ - mutiple calls trigger clearTimeout on previous setTimeout()s therefore cancels them
+ */
 const debounce = (func, wait, immediate) => {
   let timeout
   return function(...arguments) {
-    /**
-     * (immediate = true, calls first invocation)
-     * functionCall runs once only until a setTimeout() completes and timeout is set to null again
-     * mutiple calls trigger clearTimeouts so timeout never is set to null unless one setTimeout() finishes
-     * 
-     * (immediate = false, calls last invocation)
-     * functionCall runs after setTimeout() finishes
-     * mutiple calls trigger clearTimeout on previous setTimeout()s therefore cancels them
-     */
     const functionCall = () => {
       timeout = null
       if (!immediate) func.apply(this, arguments)
