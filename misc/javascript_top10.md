@@ -83,7 +83,7 @@ var a = 10;
 function a() {}
 ```
 
-### Temporal Dead Zone (https://tinyurl.com/y9dmfnru)
+#### Temporal Dead Zone (https://tinyurl.com/y9dmfnru)
 - "`let` bindings are created at the top of the (block) scope containing the declaration, commonly referred to as "hoisting". Unlike variables declared with var, which will start with the value undefined, let variables are not initialized until their definition is evaluated. Accessing the variable before the initialization results in a ReferenceError. The variable is in a "temporal dead zone" from the start of the block until the initialization is processed."
 
 #### hoisting + temporal dead zone
@@ -209,7 +209,7 @@ counter['retrieve']()
 
 ## 4. Implement Fibonacci()/Debounce() [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
  ![Fibonacci](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/FibonacciSpiral.svg/220px-FibonacciSpiral.svg.png)
-- Fibonacci
+#### Fibonacci
   + array where current number is the sum of previous two numbers for a requested size of array
 ```javascript
 function get_fibonacci_of_size(size){
@@ -246,7 +246,7 @@ def get_fibonacci_of_size(size):
 
 print get_fibonacci_of_size(5)
 ````
-- Debounce
+#### Debounce
   + a wrapper function to make the inner function only run once (either at the start or end of the series) on a series of invocations 
 ```javascript
 const debounce = (func, wait, immediate) => {
