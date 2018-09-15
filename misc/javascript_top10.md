@@ -8,7 +8,10 @@
 
 #### [4. Implement Fibonacci / Debounce](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#4-implement-fibonaccidebounce-sushi)
 
+#### [5.Implement Best Time to Buy and Sell Stock](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#4-implement-besttimetobuyandsellstock-sushi)
+
 ---
+<br />
 
 ## 1. What is Hoisting? [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 
@@ -106,8 +109,7 @@ function test(){
 }
 test();
 ```
-
-
+<br />
 
 ## 2. What is Closure? [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 
@@ -202,10 +204,12 @@ counter['retrieve']()
 - https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops
 - https://coderbyte.com/algorithm/3-common-javascript-closure-questions
 - https://medium.freecodecamp.org/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb
+<br />
 
 ## 3. Implement TwoSum() [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 - TwoSum(numbers, target) => (index1, index2), https://leetcode.com/problems/two-sum/
-- [repo example](https://github.com/lucidsushi/leet-code/blob/master/001_algo_twosum.py)
+- [repo example](https://github.com/lucidsushi/leet-code/blob/master/001_algo_twosum.py)  
+<br />
 
 ## 4. Implement Fibonacci()/Debounce() [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
  ![Fibonacci](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/FibonacciSpiral.svg/220px-FibonacciSpiral.svg.png)
@@ -245,7 +249,8 @@ def get_fibonacci_of_size(size):
   return sequence
 
 print get_fibonacci_of_size(5)
-````
+```
+
 #### Debounce
   + a wrapper function to make the inner function only run once (either at the start or end of the series) on a series of invocations 
 ```javascript
@@ -278,3 +283,8 @@ window.addEventListener('keyup', debounce((e) => {
 #### Resources
  - https://davidwalsh.name/javascript-debounce-function
 - [debounce-deep-dive-javascript-es6](https://medium.com/@TCAS3/debounce-deep-dive-javascript-es6-e6f8d983b7a1)
+
+<br />
+
+## 5. Implement Best Time to Buy and Sell Stock [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
