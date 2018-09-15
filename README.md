@@ -1,5 +1,9 @@
 #### Quick Links
+
+- [Modern JS Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet)
+
 - https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
+
 - https://leetcode.com/
 
 - https://help.github.com/enterprise/2.12/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
