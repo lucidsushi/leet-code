@@ -247,17 +247,34 @@ def get_fibonacci_of_size(size):
 print get_fibonacci_of_size(5)
 ````
 - Debounce
-
-debounce = (function, wait, immediate) => {
-
-  return () => {
-    let later = () => {
+  + a wrapper function to make the inner function only run once (either at the start or end of the series) on a series of invocations 
+```javascript
+const debounce = (func, wait, immediate) => {
+  let timeout
+  return function(...arguments) {
+    /**
+     * (immediate = true, calls first invocation)
+     * functionCall runs once only until a setTimeout() completes and timeout is set to null again
+     * mutiple calls trigger clearTimeouts so timeout never is set to null unless one setTimeout() finishes
+     * 
+     * (immediate = false, calls last invocation)
+     * functionCall runs after setTimeout() finishes
+     * mutiple calls trigger clearTimeout on previous setTimeout()s therefore cancels them
+     */
+    const functionCall = () => {
       timeout = null
-      if (!immediate) function.apply(this, arguments)
+      if (!immediate) func.apply(this, arguments)
     }
-
+    if (immediate && !timeout) func.apply(this, arguments)
+    clearTimeout(timeout)
+    timeout = setTimeout(functionCall, wait)
   }
-
 }
-https://davidwalsh.name/javascript-debounce-function
-https://medium.com/@TCAS3/debounce-deep-dive-javascript-es6-e6f8d983b7a1
+
+window.addEventListener('keyup', debounce((e) => {
+  console.log(e);
+}, 1000, true));
+```
+#### Resources
+ - https://davidwalsh.name/javascript-debounce-function
+- [debounce-deep-dive-javascript-es6](https://medium.com/@TCAS3/debounce-deep-dive-javascript-es6-e6f8d983b7a1)
