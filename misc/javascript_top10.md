@@ -10,6 +10,8 @@
 
 #### [5.Implement Best Time to Buy and Sell Stock](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#4-implement-besttimetobuyandsellstock-sushi)
 
+#### [6.More Scoping Question](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#6-more-scoping-question-sushi)
+
 ---
 <br />
 
@@ -288,4 +290,75 @@ window.addEventListener('keyup', debounce((e) => {
 
 ## 5. Implement Best Time to Buy and Sell Stock [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
-- [repo example](https://github.com/lucidsushi/leet-code/blob/master/121_algo_bestTimeToBUyAndSellStock.py) 
+- [repo example](https://github.com/lucidsushi/leet-code/blob/master/121_algo_bestTimeToBUyAndSellStock.py)
+
+<br />
+
+## 6. More Scoping Question [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+
+- EG. what will this output. Why?
+```javascript
+// first version
+var myObject = {
+    foo: "bar",
+    func: function() {
+        // console.log(this === window) //false
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo);
+        console.log("outer func:  self.foo = " + self.foo);
+        (function() {
+            console.log("inner func:  this.foo = " + this.foo);
+            console.log("inner func:  self.foo = " + self.foo);
+        }());
+    }
+};
+myObject.func();
+```
+
+```javascript
+// myObject now a function myFunction
+var myFunction = () => {
+ //  console.log(this === window) //true
+ this.foo = "window_foo"
+ var self = this;
+ return {
+   foo: "bar",
+   func: function() {
+       //  console.log(this === window) //false
+       this.foo = "object_func_foo"
+       console.log("outer func:  this.foo = " + this.foo);
+       console.log("outer func:  self.foo = " + self.foo);
+       (function() {
+           console.log("inner func:  this.foo = " + this.foo);
+           console.log("inner func:  self.foo = " + self.foo);
+       }());
+   }
+ };
+} 
+myFunction().func();
+```
+
+```javascript
+// func: function() -> func: () =>
+// arrow function take `this` context from enclosing scope
+this.foo = 'window_foo'
+var myFunction = () => {
+ // console.log(this === window) //true
+ // this.foo = "window_foo1"
+ var self = this;
+ return {
+   foo: "bar",
+   func: () => {
+       // console.log(this === window) //true
+       // this.foo = "window_foo2"
+       console.log("outer func:  this.foo = " + this.foo);
+       console.log("outer func:  self.foo = " + self.foo);
+       (function() {
+           console.log("inner func:  this.foo = " + this.foo);
+           console.log("inner func:  self.foo = " + self.foo);
+       }());
+   }
+ };
+} 
+myFunction().func();
+```
