@@ -8,7 +8,7 @@
 
 #### [4. Implement Fibonacci / Debounce](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#4-implement-fibonaccidebounce-sushi)
 
-#### [5.Implement Best Time to Buy and Sell Stock](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#4-implement-besttimetobuyandsellstock-sushi)
+#### [5.Implement Best Time to Buy and Sell Stock](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#5-implement-best-time-to-buy-and-sell-stock-sushi)
 
 #### [6.More Scoping Question](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#6-more-scoping-question-sushi)
 
@@ -290,7 +290,7 @@ window.addEventListener('keyup', debounce((e) => {
 
 ## 5. Implement Best Time to Buy and Sell Stock [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
-- [repo example](https://github.com/lucidsushi/leet-code/blob/master/121_algo_bestTimeToBUyAndSellStock.py)
+- [repo example](https://github.com/lucidsushi/leet-code/blob/master/121_algo_bestTimeToBuyAndSellStock.py)
 
 <br />
 
@@ -362,3 +362,5 @@ var myFunction = () => {
 } 
 myFunction().func();
 ```
+
+

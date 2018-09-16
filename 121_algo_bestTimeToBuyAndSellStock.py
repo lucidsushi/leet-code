@@ -23,10 +23,6 @@
 
 # o(n^2)
 def maxProfit(prices):
-    """
-    :type prices: List[int]
-    :rtype: int
-    """
     max_profit = 0
     for i in range(len(prices) - 1):
         for j in range(i + 1, len(prices)):
@@ -38,10 +34,6 @@ def maxProfit(prices):
 
 # one pass
 def maxProfit(prices):
-    """
-    :type prices: List[int]
-    :rtype: int
-    """
     max_profit = 0
     min_value = float('inf')
     for i in range(len(prices)):
