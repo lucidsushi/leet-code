@@ -14,6 +14,10 @@
 
 #### [7. Something Async](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#7-something-async-sushi)
 
+#### [8. (Uncommon) == vs ===](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#8-==-vs-===-sushi)
+
+
+
 ---
 <br />
 
@@ -384,3 +388,28 @@ myFunction().func();
 ```
 - https://alanthai.github.io/event-loop-lessons/#introduction
 - [javascript-event-loop-explained](https://medium.com/front-end-hacking/javascript-event-loop-explained-4cd26af121d4)
+
+<br />
+
+## 8. (Uncommon) == vs === [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+
+- What is the difference between == and ===
+```
+== (abstract equality comparison) <- does type conversion
+=== (strict equality comparison)  <- doesn't do type conversion
+```
+- [equality comparisons and samenss](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+
+- What will this output:
+```javascript
+console.log(1 == '1');
+console.log(1 === '1');
+console.log(0 == false);
+console.log(0 == 'false');
+
+
+//true
+//false
+//true
+//false
+```
