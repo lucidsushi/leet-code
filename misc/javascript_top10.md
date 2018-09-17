@@ -14,7 +14,7 @@
 
 #### [7. Something Async](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#7-something-async-sushi)
 
-#### [8. (Uncommon) == vs ===](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#8-==-vs-===-sushi)
+#### [8. (Uncommon) == vs ===](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#8-uncommon--vs--sushi)
 
 
 
