@@ -12,6 +12,8 @@
 
 #### [6. More Scoping Question](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#6-more-scoping-question-sushi)
 
+#### [7. Something Async](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#7-something-async-sushi)
+
 ---
 <br />
 
@@ -363,4 +365,22 @@ var myFunction = () => {
 myFunction().func();
 ```
 
+<br />
 
+## 7. Something Async [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+
+```javascript
+(function() {
+    console.log(1); 
+    setTimeout(function(){console.log(2)}, 1000); 
+    setTimeout(function(){console.log(3)}, 0); 
+    console.log(4);
+})();
+
+//1
+//4
+//3
+//2
+```
+- https://alanthai.github.io/event-loop-lessons/#introduction
+- [javascript-event-loop-explained](https://medium.com/front-end-hacking/javascript-event-loop-explained-4cd26af121d4)
