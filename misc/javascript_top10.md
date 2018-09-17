@@ -138,8 +138,8 @@ for (var i = 0; i < arr.length; i++) {
   }, 1000);
 }
 // 4 (FOUR TIMES).. anonymous function here is a closure
-// Not a clear example as to why it prints 4 four times, probably related to some asynchronous/event loop/que fundamentals
-// Anonymous functions from setTimeout are only run after the for loop is done; and by then the `i` value is 4 as a result of the last `i++` before the loop ends
+// Anonymous functions from setTimeout are "queued" only runs after the for loop is done (blocking event on call stack); and by then the `i` value is 4 as the result of the last `i++` which is accessible by the closure
+// Hence, closure closes in the variable not the value(?)
 ```
 ##### Example 1 Cont' - Using `let` (no hoisting to the outside of for loop)
 ```javascript
