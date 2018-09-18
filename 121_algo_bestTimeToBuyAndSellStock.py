@@ -36,11 +36,11 @@ def maxProfit(prices):
 def maxProfit(prices):
     max_profit = 0
     min_value = float('inf')
-    for i in range(len(prices)):
-        if prices[i] < min_value:
-            min_value = prices[i]
-        elif prices[i] - min_value > max_profit:
-            max_profit = prices[i] - min_value
+    for price in prices:
+        if price < min_value:
+            min_value = price
+        elif price - min_value > max_profit:
+            max_profit = price - min_value
        
     return max_profit
 
