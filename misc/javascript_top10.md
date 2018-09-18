@@ -429,4 +429,4 @@ console.log(0 == 'false');
 ```
 0.100000001490116119384765625 + 0.20000000298023223876953125 = 0.300000004470348358154296875
 ```
-- ![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
+![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
