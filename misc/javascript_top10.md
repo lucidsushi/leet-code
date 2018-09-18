@@ -289,7 +289,7 @@ window.addEventListener('keyup', debounce((e) => {
 }, 1000, true));
 ```
 #### Resources
- - https://davidwalsh.name/javascript-debounce-function
+- https://davidwalsh.name/javascript-debounce-function
 - [debounce-deep-dive-javascript-es6](https://medium.com/@TCAS3/debounce-deep-dive-javascript-es6-e6f8d983b7a1)
 
 <br />
@@ -422,4 +422,9 @@ console.log(0 == 'false');
   +  console.log(0.1 + 0.2)
   +  console.log(0.1 + 0.2 + 0.3 === 0.3 + 0.2 + 0.1)
 
+#### Resources
+- https://www.h-schmidt.net/FloatConverter/IEEE754.html
+```
+0.100000001490116119384765625 + 0.20000000298023223876953125 = 0.300000004470348358154296875
+```
 - ![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
