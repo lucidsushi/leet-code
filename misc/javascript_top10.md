@@ -413,3 +413,13 @@ console.log(0 == 'false');
 //true
 //false
 ```
+
+<br />
+
+## 9. (Uncommon) Floating Numbers [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+
+- What will this output and why:
+  +  console.log(0.1 + 0.2)
+  +  console.log(0.1 + 0.2 + 0.3 === 0.3 + 0.2 + 0.1)
+
+- ![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
