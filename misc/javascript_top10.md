@@ -423,6 +423,9 @@ console.log(0 == 'false');
 - What will this output and why:
   +  console.log(0.1 + 0.2)
   +  console.log(0.1 + 0.2 + 0.3 === 0.3 + 0.2 + 0.1)
+  
+- base2 ruler
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\frac{16}{2}+\frac{8}{2}+\frac{4}{2}+\frac{2}{2}+0+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}"/>
 
 #### Resources
 - https://www.h-schmidt.net/FloatConverter/IEEE754.html
