@@ -424,8 +424,12 @@ console.log(0 == 'false');
   +  console.log(0.1 + 0.2)
   +  console.log(0.1 + 0.2 + 0.3 === 0.3 + 0.2 + 0.1)
   
-- base2 ruler
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\frac{16}{2}+\frac{8}{2}+\frac{4}{2}+\frac{2}{2}+0+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}"/>
+-  0.1 base10 is 1/10, represented in binary =
+
+    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\frac{16}{2}+\frac{8}{2}+\frac{4}{2}+\frac{2}{2}+0+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}"/>
+    
+        
+                          0.  0   (0    0    1    1)...
 
 #### Resources
 - https://www.h-schmidt.net/FloatConverter/IEEE754.html
