@@ -432,7 +432,9 @@ console.log(0 == 'false');
     
         
                           0.  0   (0    0    1    1)...
-- Stored as IEEE754 Binary
+- Storing in IEEE754 format
+    
+    ![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
     
     Sign bit (1 bit) - "0"
     
@@ -454,8 +456,6 @@ console.log(0 == 'false');
 
       0 01111011 10011001100110011001101
     
-    ![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
-
     which when convertd back to base 10 is about:
 
       0.100000001490116119384765625
