@@ -422,9 +422,9 @@ console.log(0 == 'false');
 
 - What will this output and why:
   +  console.log(0.1 + 0.2)
-    *  (floating point number)
+        *  (floating point number)
   +  console.log(0.1 + 0.2 + 0.3 === 0.3 + 0.2 + 0.1)
-    *  (floating point number + order of operation)
+        *  (floating point number + order of operation)
   
 -  0.1 base10 is 1/10, represented in binary =
 
