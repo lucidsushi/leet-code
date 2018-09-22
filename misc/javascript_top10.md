@@ -453,6 +453,8 @@ console.log(0 == 'false');
     0.1 in base10 therefore becomes this format in IEEE754 binary32:
 
       0 01111011 10011001100110011001101
+    
+    ![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
 
     which when convertd back to base 10 is about:
 
@@ -476,4 +478,4 @@ console.log(0 == 'false');
 - [floating point number](https://www.youtube.com/watch?v=PZRI1IfStY0)
 - [IEEE754 binary 32](https://en.wikipedia.org/wiki/Single-precision_floating-point_format#IEEE_754_single-precision_binary_floating-point_format:_binary32)
 - https://www.h-schmidt.net/FloatConverter/IEEE754.html
-![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
+
