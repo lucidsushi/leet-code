@@ -16,9 +16,9 @@
 
 #### [8. What are Promises?](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#8-what-are-promises-sushi)
 
-#### [9. (Uncommon) == vs ===](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#8-uncommon--vs--sushi)
+#### [9. (Uncommon) == vs ===](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#9-uncommon--vs--sushi)
 
-#### [10. (Uncommon) Floating Point Numbers](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#9-uncommon-floating-point-numbers-sushi)
+#### [10. (Uncommon) Floating Point Numbers](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#10-uncommon-floating-point-numbers-sushi)
 
 
 
