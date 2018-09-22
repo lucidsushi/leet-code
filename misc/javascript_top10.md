@@ -436,17 +436,17 @@ console.log(0 == 'false');
     
     ![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
     
-    Sign bit (1 bit) - "0"
+    **Sign bit (1 bit)** - "0"
     
         0 (positive number)
     
-    Exponent (8 bit) - "01111011"
+    **Exponent (8 bit)** - "01111011"
         
         -4 (has to store number in normalized form so it has to start from 1,  so in 0.00011 the decimal shifts four over to be 1.1...)
         127 (representing location for 0)
         127 - 4 = 123 = 01111011 (8 bit binary)
 
-    Mantissa/Fraction (23 bit) = "10011001100110011001101"
+    **Mantissa/Fraction (23 bit)** - "10011001100110011001101"
 
         Store 23 bit starting from after the "1." (0.0(0011) is now 00001.1)
         1(0011)(0011)(0011)(0011)(0011)(00) | 1 <- the 24th bit rounds up
