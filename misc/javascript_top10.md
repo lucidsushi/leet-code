@@ -14,9 +14,11 @@
 
 #### [7. Something Async](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#7-something-async-sushi)
 
-#### [8. (Uncommon) == vs ===](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#8-uncommon--vs--sushi)
+#### [8. What are Promises?](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#8-what-are-promises-sushi)
 
-#### [9. (Uncommon) Floating Point Numbers](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#9-uncommon-floating-point-numbers-sushi)
+#### [9. (Uncommon) == vs ===](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#8-uncommon--vs--sushi)
+
+#### [10. (Uncommon) Floating Point Numbers](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#9-uncommon-floating-point-numbers-sushi)
 
 
 
@@ -393,7 +395,11 @@ myFunction().func();
 
 <br />
 
-## 8. (Uncommon) == vs === [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+## 8. What are Promises? [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+
+<br />
+
+## 9. (Uncommon) == vs === [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 
 - What is the difference between == and ===
 ```
@@ -418,7 +424,7 @@ console.log(0 == 'false');
 
 <br />
 
-## 9. (Uncommon) Floating Point Numbers [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+## 10. (Uncommon) Floating Point Numbers [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
 
 - What will this output and why:
   +  console.log(0.1 + 0.2)
