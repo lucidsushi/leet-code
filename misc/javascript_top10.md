@@ -422,7 +422,9 @@ console.log(0 == 'false');
 
 - What will this output and why:
   +  console.log(0.1 + 0.2)
+    *  (floating point number)
   +  console.log(0.1 + 0.2 + 0.3 === 0.3 + 0.2 + 0.1)
+    *  (floating point number + order of operation)
   
 -  0.1 base10 is 1/10, represented in binary =
 
@@ -430,10 +432,48 @@ console.log(0 == 'false');
     
         
                           0.  0   (0    0    1    1)...
+- Stored as IEEE754 Binary
+    
+    Sign bit (1 bit) - "0"
+    
+        0 (positive number)
+    
+    Exponent (8 bit) - "01111011"
+        
+        -4 (has to store number in normalized form so it has to start from 1,  so in 0.00011 the decimal shifts four over to be 1.1...)
+        127 (representing location for 0)
+        127 - 4 = 123 = 01111011 (8 bit binary)
+
+    Mantissa/Fraction (23 bit) = "10011001100110011001101"
+
+        Store 23 bit starting from after the "1." (0.0(0011) is now 00001.1)
+        1(0011)(0011)(0011)(0011)(0011)(00) | 1 <- the 24th bit rounds up
+        1(0011)(0011)(0011)(0011)(0011)(01) <- Final result
+
+    0.1 in base10 therefore becomes this format in IEEE754 binary32:
+
+      0 01111011 10011001100110011001101
+
+    which when convertd back to base 10 is about:
+
+      0.100000001490116119384765625
+
+- In Summary
+
+  Going through the process for "0.2" would yield (in base10):
+
+  0.20000000298023223876953125
+
+  So 0.1 + 0.2 in binary32 becomes:
+
+    0.100000001490116119384765625 +
+    0.20000000298023223876953125    =
+    0.300000004470348358154296875
+
+  So console.log(0.1+02) != 0.3
 
 #### Resources
+- [floating point number](https://www.youtube.com/watch?v=PZRI1IfStY0)
+- [IEEE754 binary 32](https://en.wikipedia.org/wiki/Single-precision_floating-point_format#IEEE_754_single-precision_binary_floating-point_format:_binary32)
 - https://www.h-schmidt.net/FloatConverter/IEEE754.html
-```
-0.100000001490116119384765625 + 0.20000000298023223876953125 = 0.300000004470348358154296875
-```
 ![Floating Point Schema (IBM)](https://www.ibm.com/developerworks/library/j-jtp0114/float.gif)
