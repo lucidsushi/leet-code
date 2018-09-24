@@ -396,6 +396,55 @@ myFunction().func();
 <br />
 
 ## 8. What are Promises? [:sushi:](https://github.com/lucidsushi/leet-code/blob/master/misc/javascript_top10.md#table-of-contents)
+- Promises are useful for avoiding callback hell
+- Promises are useful for structuring asynchronous methods to return like synchronous methods
+- Promises are objects useful for being proxies for the eventual success or failure of asynchronous method returns
+- Promises are objects that takes an executor function which takes another two functions as arguments (resolve and reject)
+![mdn promise flow](https://mdn.mozillademos.org/files/15911/promises.png)
+```javascript
+// Using promises to handle asynchronous calls synchronously 
+
+// Example One - Not using Promises
+asyncFunctionOne()
+asyncFunctionTwo()
+console.log('Will be ran 3rd (Not using Promise)')
+// Will be ran 3rd (Not using Promise)
+// Will be ran 1st (Not using Promise)
+// Will be ran 2nd (Not using Promise)
+
+function asyncFunctionOne(){
+  setTimeout(() => console.log('Will be ran 1st (Not using Promise)'), 0)
+}
+function asyncFunctionTwo(){
+  setTimeout(() => console.log('Will be ran 2nd (Not using Promise)'), 0)
+}
+
+
+// Example Two - Using Promises
+(async function runAsync(){
+  console.log(await promiseAsyncFunctionOne())
+  console.log(await promiseAsyncFunctionTwo())
+  console.log('Will be ran 3rd (Using Promise)')
+})()
+// Will be ran 1st (Using Promise)
+// Will be ran 2nd (Using Promise)
+// Will be ran 3rd (Using Promise)
+
+function promiseAsyncFunctionOne(){
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Will be ran 1st (Using Promise)'), 0)
+  })
+}
+function promiseAsyncFunctionTwo(){
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Will be ran 2nd (Using Promise)'), 0)
+  })
+}
+```
+#### Resources
+- [Youtube Techsith](https://www.youtube.com/watch?v=s6SH72uAn3Q)
+- [Promises for Dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
+- [Async Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 
 <br />
 
@@ -406,7 +455,7 @@ myFunction().func();
 == (abstract equality comparison) <- does type conversion
 === (strict equality comparison)  <- doesn't do type conversion
 ```
-- [equality comparisons and samenss](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+- [equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 
 - What will this output:
 ```javascript
