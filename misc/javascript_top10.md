@@ -401,9 +401,9 @@ myFunction().func();
 - Promises are objects useful for being proxies for the eventual success or failure of asynchronous method returns
 - Promises are objects that takes an executor function which takes another two functions as arguments (resolve and reject)
 ![mdn promise flow](https://mdn.mozillademos.org/files/15911/promises.png)
-```javascript
-// Using promises to handle asynchronous calls synchronously 
 
+**Using promises to handle asynchronous calls synchronously** 
+```javascript
 // Example One - Not using Promises
 asyncFunctionOne()
 asyncFunctionTwo()
@@ -418,8 +418,8 @@ function asyncFunctionOne(){
 function asyncFunctionTwo(){
   setTimeout(() => console.log('Will be ran 2nd (Not using Promise)'), 0)
 }
-
-
+```
+```javascript
 // Example Two - Using Promises
 (async function runAsync(){
   console.log(await promiseAsyncFunctionOne())
@@ -441,6 +441,99 @@ function promiseAsyncFunctionTwo(){
   })
 }
 ```
+
+**Using promises to escape callback hell**
+```javascript
+// Example One - Not using Promises
+
+// When operations take time to complete, code execution order is not straight forward
+(function asyncAdd(){
+
+  let num1 = 1;
+  let num2 = 2;
+  let num3 = 3;
+  let num4 = 4;
+  let resultA;
+  let resultB;
+  let resultC;
+
+  setTimeout(() => {
+    resultA = num1 + num2
+    console.log(`sumA is ${resultA}`)
+    }, 90)
+
+  setTimeout(() => {
+    resultB = resultA + num3
+    console.log(`sumB is ${resultB}`)
+    }, 80)
+
+  setTimeout(() => {
+    resultC = resultB + num4
+    console.log(`sumC is ${resultC}`)
+  }, 70)
+})()
+
+// sumC is NaN
+// sumB is NaN
+// sumA is 3
+
+
+// using nested callbacks gives correct execution order but results in callback hell for when amount of nesting is high
+(function asyncAdd(){
+
+  let num1 = 1;
+  let num2 = 2;
+  let num3 = 3;
+  let num4 = 4;
+  let resultA;
+  let resultB;
+  let resultC;
+
+  setTimeout(() =>{
+    resultA = num1 + num2
+    console.log(`sumA is ${resultA}`)
+
+    setTimeout(() => {
+      resultB = resultA + num3
+      console.log(`sumB is ${resultB}`)
+
+      setTimeout(() => {
+        resultC = resultB + num4
+        console.log(`sumC is ${resultC}`)
+      }, 90)
+    }, 80)
+  }, 70)
+})()
+
+// sumA is 3
+// sumB is 6
+// sumC is 10
+```
+```
+// Example Two - Using Promises
+(function asyncAdd(){
+
+  let num1 = 1;
+  let num2 = 2;
+  let num3 = 3;
+  let num4 = 4;
+
+  let Add = (a, b) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log(`sum is ` + (a + b))
+        resolve(a + b)
+      }, 100)
+    })
+  }
+
+  Add(num1, num2)
+    .then((resolved) => Add(resolved, num3))
+    .then((resolved) => Add(resolved, num4))
+
+})()
+```
+
 #### Resources
 - [Youtube Techsith](https://www.youtube.com/watch?v=s6SH72uAn3Q)
 - [Promises for Dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
