@@ -477,7 +477,6 @@ function promiseAsyncFunctionTwo(){
 // sumB is NaN
 // sumA is 3
 
-
 // nested callbacks gives correct execution order but results in callback hell (not super obvious here)
 (function asyncAdd(){
 
@@ -532,6 +531,11 @@ function promiseAsyncFunctionTwo(){
     .then((resolved) => Add(resolved, num4))
 
 })()
+
+// sum is 3
+// sum is 6
+// sum is 10
+
 ```
 
 #### Resources
