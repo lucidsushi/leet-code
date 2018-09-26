@@ -478,7 +478,7 @@ function promiseAsyncFunctionTwo(){
 // sumA is 3
 
 
-// using nested callbacks gives correct execution order but results in callback hell for when amount of nesting is high
+// nested callbacks gives correct execution order but results in callback hell (not super obvious here)
 (function asyncAdd(){
 
   let num1 = 1;
@@ -509,7 +509,7 @@ function promiseAsyncFunctionTwo(){
 // sumB is 6
 // sumC is 10
 ```
-```
+```javascript
 // Example Two - Using Promises
 (function asyncAdd(){
 
