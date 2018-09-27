@@ -537,6 +537,71 @@ function promiseAsyncFunctionTwo(){
 // sum is 10
 
 ```
+```javascript
+// Example Three - Using Promises (but CATCHING error)
+(function asyncAdd(){
+
+  let num1 = 1;
+  let num2 = 2;
+  let num3 = 3;
+  let num4 = 4;
+
+  let Add = (a, b) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const sum = a + b
+        if(sum <= 6){
+          console.log(`sum is ${sum}`)
+          resolve(sum)
+        } else {
+          const reason = new Error(`Rejected! Sum(${sum}) is greater than 6`)
+          reject(reason)
+        }
+      }, 100)
+    })
+  }
+
+  Add(num1, num2)
+    .then((resolved) => Add(resolved, num3))
+    .then((resolved) => Add(resolved, num4))
+    .catch((error) => console.log(error.message))
+})()
+
+sum is 3
+// sum is 6
+// Rejected! Sum(10) is greater than 6
+
+
+//catching error with ASYNC/AWAIT
+(async function asyncAdd(){
+  let num1 = 1;
+  let num2 = 2;
+  let num3 = 3;
+  let num4 = 4;
+  let Add = (a, b) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const sum = a + b
+        if(sum <= 6){
+          console.log(`sum is ${sum}`)
+          resolve(sum)
+        } else {
+          const reason = new Error(`Rejected! Sum(${sum}) is greater than 6`)
+          reject(reason)
+        }
+      }, 100)
+    })
+  }
+  try {
+    sum1 = await Add(num1, num2)
+    sum2 = await Add(sum1, num3)
+    sum3 = await Add(sum2, num4)
+  }
+  catch(error){
+    console.log(error.message)
+  }
+})()
+```
 
 #### Resources
 - [Youtube Techsith](https://www.youtube.com/watch?v=s6SH72uAn3Q)
