@@ -449,13 +449,13 @@ function promiseAsyncFunctionTwo(){
 // When operations take time to complete, code execution order is not straight forward
 (function asyncAdd(){
 
-  let num1 = 1;
-  let num2 = 2;
-  let num3 = 3;
-  let num4 = 4;
-  let resultA;
-  let resultB;
-  let resultC;
+  let num1 = 1
+  let num2 = 2
+  let num3 = 3
+  let num4 = 4
+  let resultA
+  let resultB
+  let resultC
 
   setTimeout(() => {
     resultA = num1 + num2
@@ -480,13 +480,13 @@ function promiseAsyncFunctionTwo(){
 // nested callbacks gives correct execution order but results in callback hell (not super obvious here)
 (function asyncAdd(){
 
-  let num1 = 1;
-  let num2 = 2;
-  let num3 = 3;
-  let num4 = 4;
-  let resultA;
-  let resultB;
-  let resultC;
+  let num1 = 1
+  let num2 = 2
+  let num3 = 3
+  let num4 = 4
+  let resultA
+  let resultB
+  let resultC
 
   setTimeout(() =>{
     resultA = num1 + num2
@@ -512,10 +512,10 @@ function promiseAsyncFunctionTwo(){
 // Example Two - Using Promises
 (function asyncAdd(){
 
-  let num1 = 1;
-  let num2 = 2;
-  let num3 = 3;
-  let num4 = 4;
+  let num1 = 1
+  let num2 = 2
+  let num3 = 3
+  let num4 = 4
 
   let Add = (a, b) => {
     return new Promise((resolve) => {
@@ -541,10 +541,10 @@ function promiseAsyncFunctionTwo(){
 // Example Three - Using Promises (but CATCHING error)
 (function asyncAdd(){
 
-  let num1 = 1;
-  let num2 = 2;
-  let num3 = 3;
-  let num4 = 4;
+  let num1 = 1
+  let num2 = 2
+  let num3 = 3
+  let num4 = 4
 
   let Add = (a, b) => {
     return new Promise((resolve, reject) => {
@@ -567,17 +567,17 @@ function promiseAsyncFunctionTwo(){
     .catch((error) => console.log(error.message))
 })()
 
-sum is 3
+// sum is 3
 // sum is 6
 // Rejected! Sum(10) is greater than 6
 
 
 //catching error with ASYNC/AWAIT
 (async function asyncAdd(){
-  let num1 = 1;
-  let num2 = 2;
-  let num3 = 3;
-  let num4 = 4;
+  let num1 = 1
+  let num2 = 2
+  let num3 = 3
+  let num4 = 4
   let Add = (a, b) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
