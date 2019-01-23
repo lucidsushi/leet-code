@@ -279,13 +279,15 @@ with connect('test.db') as conn:
   cur.execute('drop table points')
 
 
-# method 1 impelement ctx()
+# method 1 impelement ctx() using data model protocol
 class temptable:
   def __init__(self, cur):
     self.cur = cur
   def __enter__(self):
+    print('__enter__')
     self.cur.execute('create table points(x int, y int)')
   def __exit__(self, *args):
+    print('__exit__')
     self.cur.execute('drop table points')
 
 
@@ -300,9 +302,105 @@ with connect('test.db') as conn:
         print(row)
     for row in cur.execute('select sum(x * y) from points'):
         print(row)
+
+# method 2 notice sequential action enter/exit, implement generator pattern
+
+# the generator
+def temptable(cur):
+  print('__enter__')
+  self.cur.execute('create table points(x int, y int)')
+  yield
+  print('__exit__')
+  self.cur.execute('drop table points')
+
+class contextmanager:
+  def __init__(self, gen):
+    self.gen = gen
+  def __call__(self, *args, **kwargs):
+    self.args, self.kwargs = args, kwargs
+    return self # why
+  def __enter__(self):
+    self.gen_inst = self.gen(*self.args, **self.kwargs))# self.cur
+    next(self.gen) # why next here?
+  def __exit__(self, *args):
+    next(self.gen_inst, None) # first send has to be none?
+                        # https://stackoverflow.com/a/19892334
+
+with connect('test.db') as conn:
+  cur = conn.cursor()
+  with contextmanager(temptable)(cur):
+    cur.execute('insert into points (x, y) values(1, 1)')
+    cur.execute('insert into points (x, y) values(1, 2)')
+    cur.execute('insert into points (x, y) values(2, 1)')
+    cur.execute('insert into points (x, y) values(2, 2)')
+    for row in cur.execute("select x, y from points"):
+        print(row)
+    for row in cur.execute('select sum(x * y) from points'):
+        print(row)
     
 
+# method 3 refatoring generator usage to notice decorator pattern
 
+class contextmanager:
+  def __init__(self, gen):
+    self.gen = gen
+  def __call__(self, *args, **kwargs):
+    self.args, self.kwargs = args, kwargs
+    return self # why
+  def __enter__(self):
+    self.gen_inst = self.gen(*self.args, **self.kwargs))# self.cur
+    next(self.gen) # why next here?
+  def __exit__(self, *args):
+    next(self.gen_inst, None) # first send has to be none?
+                        # https://stackoverflow.com/a/19892334
+
+def temptable(cur):
+  print('__enter__')
+  self.cur.execute('create table points(x int, y int)')
+  yield
+  print('__exit__')
+  self.cur.execute('drop table points')
+
+# next returns a generator?
+temptable = contextmanager(temptable)
+
+with connect('test.db') as conn:
+  cur = conn.cursor()
+  with temptable(cur):
+    cur.execute('insert into points (x, y) values(1, 1)')
+    cur.execute('insert into points (x, y) values(1, 2)')
+    cur.execute('insert into points (x, y) values(2, 1)')
+    cur.execute('insert into points (x, y) values(2, 2)')
+    for row in cur.execute("select x, y from points"):
+        print(row)
+    for row in cur.execute('select sum(x * y) from points'):
+        print(row)
+
+# method 3 applying decorator pattern
+
+class contextmanager:
+  def __init__(self, gen):
+    self.gen = gen
+  def __call__(self, *args, **kwargs):
+    self.args, self.kwargs = args, kwargs
+    return self # why
+  def __enter__(self):
+    self.gen_inst = self.gen(*self.args, **self.kwargs))# self.cur
+    next(self.gen) # why next here?
+  def __exit__(self, *args):
+    next(self.gen_inst, None) # first send has to be none?
+                        # https://stackoverflow.com/a/19892334
+
+@contextmanager
+def temptable(cur):
+  print('__enter__')
+  self.cur.execute('create table points(x int, y int)')
+  yield
+  print('__exit__')
+  self.cur.execute('drop table points')
+
+# above contextmanager is same as below
+from contextlib import contextmanager
 
 ```
 - decorator to turn a generator into a contextmanager 
