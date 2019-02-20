@@ -11,10 +11,10 @@
 
 
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
 
 def addTwoNumbers(self, l1, l2):
@@ -48,3 +48,60 @@ def addTwoNumbers(self, l1, l2):
         if not l1 and not l2:
             break
     return l_ret
+
+
+# Did it again in 2019 but looks pretty much the same as previous attempt
+def addTwoNumbers(l1, l2):
+    """
+    :type l1: ListNode
+    :type l2: ListNode
+    :rtype: ListNode
+    """
+    l0 = ListNode(None)
+    next_previous_node = None
+    carry = 0
+
+    while l1 or l2:
+
+        if not next_previous_node:
+            next_previous_node, carry, l1, l2 = add_one_digit(l0, l1, l2, carry)
+        else:
+            next_previous_node, carry, l1, l2 = add_one_digit(next_previous_node, l1, l2, carry)
+
+    if carry:
+      next_previous_node.next = ListNode(carry)
+
+    return l0.next
+
+def add_one_digit(previous_node, l1, l2, carry):
+    """Add a digit of l1 and l1 and return the newly linked node location representing the sum"""
+
+    if l1:
+      l1_val = l1.val
+      l1 = l1.next
+    else:
+      l1_val = 0
+    
+    if l2:
+      l2_val = l2.val
+      l2 = l2.next
+    else:
+      l2_val = 0
+
+    sum_total = l1_val + l2_val + carry
+    sum_digit = sum_total % 10
+    sum_carry = sum_total // 10
+    previous_node.next = ListNode(sum_digit)
+
+    return previous_node.next, sum_carry, l1, l2
+
+
+# l1 = ListNode(1)
+# l1.next = ListNode(8)
+
+# l2 = ListNode(0)
+
+# result = addTwoNumbers(l1, l2)
+
+# print result.val
+# print result.next.val
