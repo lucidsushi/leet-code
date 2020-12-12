@@ -14,14 +14,11 @@
 
 
 def findDuplicates(nums):
-    """ given num cannot be largeer than len(nums) and are all positive,
-        use them as indexs and mark with unary minus operator """
+    """given num cannot be largeer than len(nums) and are all positive,
+    use them as indexs and mark with unary minus operator"""
     nums_duplicate = []
     for num in nums:
-        nums[abs(num)-1] *= -1
-        if nums[abs(num)-1] > 0:
+        nums[abs(num) - 1] *= -1
+        if nums[abs(num) - 1] > 0:
             nums_duplicate.append(abs(num))
     return nums_duplicate
-
-
-

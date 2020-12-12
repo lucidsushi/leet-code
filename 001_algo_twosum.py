@@ -35,7 +35,7 @@ def twoSum(nums, target):
 def twoSum(nums, target):
     nums_size = len(nums)
     for i in range(nums_size - 1):
-        for j in range(i+1, nums_size):
+        for j in range(i + 1, nums_size):
             if nums[i] + nums[j] == target:
                 return i, j
 
@@ -44,6 +44,7 @@ def twoSum(nums, target):
 
 # index collision is avoided because the duplicate is returned
 # before being stored
+
 
 def twoSum(nums, target):
     nums_dict = {}
@@ -61,7 +62,7 @@ def twoSum(nums, target):
     nums_dict = {}
     for index, num in enumerate(nums):
         try:
-            return index, nums_dict[target-num]
+            return index, nums_dict[target - num]
         except KeyError:
             nums_dict[num] = index
 
@@ -71,7 +72,7 @@ def twoSum(nums, target):
     _map = {}
     for i, n in enumerate(nums):
         try:
-            return [_map[target-n], i]
+            return [_map[target - n], i]
         except:
             _map[n] = i
 
