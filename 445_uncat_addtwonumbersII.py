@@ -18,12 +18,13 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+
 def addTwoNumbers(self, l1, l2):
     """
     :type l1: ListNode
     :type l2: ListNode
     :rtype: ListNode
-    
+
     a, b = c, a
     temp = (c, a)
     a, b = temp
@@ -51,4 +52,3 @@ def addTwoNumbers(self, l1, l2):
         carry, num = divmod(total, 10)
         lsum_head, lsum_head.next = ListNode(num), lsum_head
     return lsum_head
-    

@@ -2,7 +2,7 @@
 
 # Say you have an array for which the ith element is the price of a given stock on day i.
 
-# If you were only permitted to complete at most one transaction 
+# If you were only permitted to complete at most one transaction
 # (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
 
 # Note that you cannot sell a stock before you buy one.
@@ -20,7 +20,6 @@
 # Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 
-
 # o(n^2)
 def maxProfit(prices):
     max_profit = 0
@@ -35,22 +34,15 @@ def maxProfit(prices):
 # one pass
 def maxProfit(prices):
     max_profit = 0
-    min_value = float('inf')
+    min_value = float("inf")
     for price in prices:
         if price < min_value:
             min_value = price
         elif price - min_value > max_profit:
             max_profit = price - min_value
-       
+
     return max_profit
 
 
-
-prices = [7,1,5,3,6,4] # 5
+prices = [7, 1, 5, 3, 6, 4]  # 5
 print maxProfit(prices)
-    
-
-
-
-
-
