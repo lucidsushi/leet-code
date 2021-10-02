@@ -14,16 +14,18 @@ Learning objectives
 This question gives you the chance to practice with algorithms and data structures. It’s also a good example of why careful analysis for Big-O performance is often worthwhile, as is careful exploration of common and worst-case input conditions.
 """
 
+
 def find_longest_subsequence(s, d):
-    longest = '0'
+    longest = "0"
     for word in d:
         sub_word = is_subsequence(s, word)
         if sub_word and not len(sub_word) > len(longest):
             continue
         elif sub_word:
             longest = sub_word
-    print('longest is', longest)
+    print("longest is", longest)
     return longest
+
 
 def is_subsequence(s, word):
     word_index = 0
@@ -32,9 +34,9 @@ def is_subsequence(s, word):
             if not word[word_index] == s[i]:
                 continue
             else:
-                word_index+=1
+                word_index += 1
         except IndexError:
             return word
 
 
-find_longest_subsequence('abppplee', {"able", "ale", "apple", "bale", "kangaroo"})
+find_longest_subsequence("abppplee", {"able", "ale", "apple", "bale", "kangaroo"})
