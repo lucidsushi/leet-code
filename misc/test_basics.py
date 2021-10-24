@@ -17,19 +17,20 @@ def compose_earnest_text():
         print(f'Hey {result["name"]["first"]}, will you date geeks?')  # IO
 
 
-# output
+# output + actual requests
 def test_compose_earnest_text_return_none():
     assert compose_earnest_text() == None
+    # return 'result was male, igoring'
 
 
-# output + doesnt actually prove female only
+# output + mocked requests + doesnt actually prove gender logic
 def test_compose_earnest_text_female_only(mocker):
     mock_get = mocker.patch("requests.get", autospec=True)
     mock_get.return_value.json.return_value = {"results": [{"gender": "male"}]}
     assert compose_earnest_text() == None
 
 
-# output + control flow
+# output + control flow (result is male)
 def test_compose_earnest_text_not_for_males(mocker):
     mock_print = mocker.patch("builtins.print")
     mock_get = mocker.patch("requests.get", autospec=True)
@@ -37,7 +38,7 @@ def test_compose_earnest_text_not_for_males(mocker):
     assert compose_earnest_text() == None
     mock_print.assert_not_called()
 
-
+# output + control flow (result is female)
 def test_compose_earnest_text_for_females_only(mocker):
     mock_print = mocker.patch("builtins.print")
     mock_get = mocker.patch("requests.get", autospec=True)
