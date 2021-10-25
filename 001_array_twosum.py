@@ -96,7 +96,35 @@ def twoSum(nums, target):
         else:
             return (index_small, index_big)
 
+# two-pointer sorted without caring about input is sorted
+def twoSum(nums, target):
+    nums = enumerate(nums)
+    nums = sorted(nums, key=lambda x:x[1])
+    l, r = 0, len(nums)-1
+    while l < r:
+        if nums[l][1]+nums[r][1] == target:
+            return nums[l][0], nums[r][0]
+        elif nums[l][1]+nums[r][1] < target:
+            l += 1
+        else:
+            r -= 1
+
 
 # print twoSum([3, 2, 4], 6)
 # print twoSum([1, 3, 3], 6)
 # print twoSum([2, 7, 11, 15], 9)
+
+
+# random re-attempt
+# seem_nums = {}
+# for i, n in enumerate(nums):
+#     counterpart = (target - n)
+#     if counterpart in seem_nums:
+#         return i, seem_nums[counterpart]
+#     else:
+#         seem_nums[n] = i
+
+# for i in range(len(nums)):
+#     for j in range(i+1, len(nums)):
+#         if nums[i] + nums[j] == target:
+#             return i, j
