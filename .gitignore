@@ -1,4 +1,11 @@
 .idea
+
+# python
 __pycache__
 .pytest_cache
 Pipfile
+
+# javascript
+misc/*/node_modules/
+misc/*/yarn.lock
+misc/*/package-lock.json
